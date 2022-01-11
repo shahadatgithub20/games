@@ -1,0 +1,35 @@
+.div-1{
+    padding: 15px;
+    margin:10px ;
+    background-color: chartreuse;
+    
+}
+.div-2{
+    padding: 15px;
+    margin:10px ;
+    background-color: rgb(225, 248, 202);
+
+}
+.div-3{
+    padding: 15px;
+    margin:10px ;
+    background-color: rgb(116, 187, 235);
+
+}
+.div-4{
+    align-content: center;
+    text-align: center;
+    height: 200px;
+    width: 80%;
+    padding: 15px;
+    margin:10%;
+    background-color: rgb(245, 168, 81);
+    border-radius: 500px;
+
+}
+.PlayerNo-1{
+    background-color: burlywood;
+  
+   
+    padding:1px;
+}

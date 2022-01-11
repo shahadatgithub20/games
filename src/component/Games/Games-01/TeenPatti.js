@@ -20,6 +20,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
+import TeenPattiGold from './TeenPattiGold';
 
 const drawerWidth = 200;
 // ==============================
@@ -138,11 +139,9 @@ const TeenPatti = () => {
                     <Main open={open}>
                         <DrawerHeader />
                         <Typography paragraph>
-                            Number 01
+                            <TeenPattiGold></TeenPattiGold>
                         </Typography>
-                        <Typography paragraph>
-                            Number02
-                        </Typography>
+                        
                     </Main>
             </Box>
             

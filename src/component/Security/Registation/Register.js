@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Register = () => {
     return (
@@ -23,7 +24,7 @@ const Register = () => {
                     <br/>
                     <input type="submit" value="Register" />
                     <br/>
-                    <h4>Already have an Account ?  |  LogIn </h4>
+                    <h4>Already have an Account ?  | <NavLink to="/LogIn"> LogIn </NavLink></h4>
                 </form>
         </div>
     );
