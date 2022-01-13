@@ -16,14 +16,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-// import { Link } from 'react-router-dom';
-
+// import { NavLink } from 'react-router-dom';
+import "./dashboard.css"
 // -------------------
 import {
     BrowserRouter as Router,
     Routes,
     Route,
-    Link,
+    NavLink,
     useParams,
     useNavigate,
     BrowserRouter,
@@ -63,34 +63,34 @@ function Dashboard(props) {
     <div>
       <Toolbar />
       <Divider />
-          <div className="">
-            <Link to="Profile"><Button  color="inherit">User Profile</Button></Link>
+          <div className="DashBoardNavLink">
+            <NavLink to="Profile" style={{ textDecoration: 'none',color:"black", textAlign:'right' }}><Button  color="inherit">User Profile</Button></NavLink>
              <br/>
-            <Link to="/Home"><Button  color="inherit">Home</Button></Link>
+            <NavLink to="/Home" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">Home</Button></NavLink>
              <br/>
-             <Link to="/Dashboard"><Button  color="inherit">Dashboard</Button></Link>
+             <NavLink to="/Dashboard" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">Dashboard</Button></NavLink>
              <br/>
-             <Link to="AdminPanel"><Button  color="inherit">AdminPanel</Button></Link>
+             <NavLink to="AdminPanel" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">AdminPanel</Button></NavLink>
              <br/>
-             <Link to="ComplenList"><Button  color="inherit">User-Complen-List</Button></Link>
+             <NavLink to="ComplenList" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">User-Complen-List</Button></NavLink>
              <br/>
-             <Link to="WithdrawRequest"><Button  color="inherit">WithdrawRequest</Button></Link>
+             <NavLink to="WithdrawRequest" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">WithdrawRequest</Button></NavLink>
              <br/>
-             <Link to="WithdrawList"><Button  color="inherit">WithdrawList</Button></Link>
+             <NavLink to="WithdrawList" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">WithdrawList</Button></NavLink>
              <br/>
-             <Link to="PaymentList"><Button  color="inherit">PaymentList</Button></Link>
+             <NavLink to="PaymentList" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">PaymentList</Button></NavLink>
              <br/>
-             <Link to="Start"><Button  color="inherit">Start-Games</Button></Link>
+             <NavLink to="Start" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">Start-Games</Button></NavLink>
              <br/>
-             <Link to="AccountHistory"><Button  color="inherit">Account-History</Button></Link>
+             <NavLink to="AccountHistory" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">Account-History</Button></NavLink>
              <br/>
-             <Link to="User"><Button  color="inherit">User Approve</Button></Link>
+             <NavLink to="User" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">User Approve</Button></NavLink>
              <br/>
-             <Link to="LogIn"><Button  color="inherit">LogIn</Button></Link>
+             <NavLink to="LogIn" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">LogIn</Button></NavLink>
              <br/>
-             <Link to="Register"><Button  color="inherit">Register</Button></Link>
+             <NavLink to="Register" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">Register</Button></NavLink>
              <br/>
-             <Link to="Complen"><Button  color="inherit">Complen</Button></Link>
+             <NavLink to="Complen" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">Complen</Button></NavLink>
              <br/>
              
             
@@ -131,7 +131,7 @@ function Dashboard(props) {
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        {/* The implementation can be swapped with js to avoid SEO duplication of NavLinks. */}
         <Drawer
           container={container}
           variant="temporary"
