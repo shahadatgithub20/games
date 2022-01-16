@@ -24,37 +24,43 @@ import Complen from './component/UserCortroll/Complen';
 import ComplenList from './component/AdminControll/ComplenList';
 import TeenPatti from './component/Games/Games-01/TeenPatti';
 import Start from './component/Games/Start/Start';
+import AuthProvider from './Firebase/FirebaseHook/AuthProvider';
+import PrivateRoute from './Firebase/PrivateRoute/PrivateRoute';
 // ========================
 
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-           <Header />
-              <Routes>
-                <Route path="/Header" element={<Header/>} />
-                <Route path="/*" element={<Navigate to ="/Home"/>} />
-                <Route path="/Home" element={<Home />} />
-                <Route path="/Dashboard/*" element={<Dashboard />} />
-                <Route path="/AdminPanel" element={<AdminPanel />} />
-                <Route path="/ComplenList " element={<ComplenList  />} />
-                <Route  path="DashBoardHome" element={<DashBoardHome/>}/> 
-                <Route path="/User" element={<User />} />
-                <Route path="/LogIn" element={<LogIn />} />
-                <Route path="/Profile" element={<Profile />} />
-                <Route path="/AccountHistory" element={<AccountHistory/>} />
-                <Route path="/Register" element={<Register />} />
-                <Route path="/PaymentList" element={<PaymentList />} />
-                <Route path="/WithdrawRequest" element={<WithdrawRequest />} />
-                <Route path="/WithdrawList" element={<WithdrawList />} />
-                <Route path="/TeenPatti" element={<TeenPatti />} />
-                <Route path="/Start" element={<Start/>} />
-                <Route path="/Complen" element={<Complen />} />
-                <Route path="/Footer" element={<Footer />} />
-              </Routes>
-          
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+            <Header />
+            
+                <Routes>
+                  <Route path="/Header" element={<Header/>} />
+                  <Route path="/*" element={<Navigate to ="/Home"/>} />
+                  <Route path="/Home" element={<Home />} />
+                  {/* <Route path="/Dashboard/*" element={<PrivateRoute><Dashboard /></PrivateRoute>} /> */}
+                  <Route path="/Dashboard/*" element={<Dashboard />} />
+                  <Route path="/AdminPanel" element={<AdminPanel />} />
+                  <Route path="/ComplenList " element={<ComplenList  />} />
+                  <Route  path="DashBoardHome" element={<DashBoardHome/>}/> 
+                  <Route path="/User" element={<User />} />
+                  <Route path="/LogIn" element={<LogIn />} />
+                  <Route path="/Profile" element={<Profile />} />
+                  <Route path="/AccountHistory" element={<AccountHistory/>} />
+                  <Route path="/Register" element={<Register />} />
+                  <Route path="/PaymentList" element={<PaymentList />} />
+                  <Route path="/WithdrawRequest" element={<WithdrawRequest />} />
+                  <Route path="/WithdrawList" element={<WithdrawList />} />
+                  <Route path="/TeenPatti" element={<PrivateRoute> <TeenPatti /></PrivateRoute>} />
+                  <Route path="/Start" element={<Start/>} />
+                  <Route path="/Complen" element={<Complen />} />
+                  <Route path="/Footer" element={<Footer />} />
+                </Routes>
+            
+        </BrowserRouter>
+      </AuthProvider>
      
     </div>
   );

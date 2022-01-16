@@ -43,6 +43,7 @@ import AccountHistory from '../UserCortroll/AccountHistory';
 import Complen from '../UserCortroll/Complen';
 import ComplenList from '../AdminControll/ComplenList';
 import Start from '../Games/Start/Start';
+import useAuth from '../../Firebase/FirebaseHook/useAuth';
 // ==================================
 
  
@@ -58,7 +59,11 @@ function Dashboard(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
+//  =====================================
+//  =====================================
+const {user, signIngUseIngGoogle,logOut}=useAuth();
+//  =====================================
+//  =====================================
   const drawer = (
     <div>
       <Toolbar />
@@ -68,31 +73,41 @@ function Dashboard(props) {
              <br/>
             <NavLink to="/Home" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">Home</Button></NavLink>
              <br/>
-             <NavLink to="/Dashboard" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">Dashboard</Button></NavLink>
-             <br/>
-             <NavLink to="AdminPanel" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">AdminPanel</Button></NavLink>
-             <br/>
-             <NavLink to="ComplenList" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">User-Complen-List</Button></NavLink>
-             <br/>
-             <NavLink to="WithdrawRequest" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">WithdrawRequest</Button></NavLink>
-             <br/>
-             <NavLink to="WithdrawList" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">WithdrawList</Button></NavLink>
-             <br/>
-             <NavLink to="PaymentList" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">PaymentList</Button></NavLink>
-             <br/>
+            
+             {
+               user.email && <Box>
+                  <NavLink to="/Dashboard" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">Dashboard</Button></NavLink>
+                  <br/>
+                  <NavLink to="AdminPanel" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">AdminPanel</Button></NavLink>
+                  <br/>
+                  <NavLink to="ComplenList" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">User-Complen-List</Button></NavLink>
+                  <br/>
+                  <NavLink to="WithdrawRequest" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">WithdrawRequest</Button></NavLink>
+                  <br/>
+                  <NavLink to="WithdrawList" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">WithdrawList</Button></NavLink>
+                  <br/>
+                  <NavLink to="PaymentList" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">PaymentList</Button></NavLink>
+                  <br/>
+                  <NavLink to="User" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">User Approve</Button></NavLink>
+                  <br/>
+
+               </Box>
+             }
+   
              <NavLink to="Start" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">Start-Games</Button></NavLink>
              <br/>
              <NavLink to="AccountHistory" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">Account-History</Button></NavLink>
              <br/>
-             <NavLink to="User" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">User Approve</Button></NavLink>
-             <br/>
+            
              <NavLink to="LogIn" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">LogIn</Button></NavLink>
              <br/>
              <NavLink to="Register" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">Register</Button></NavLink>
              <br/>
              <NavLink to="Complen" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">Complen</Button></NavLink>
              <br/>
-             
+             <br/>
+             <br/>
+             <button onClick={logOut}>logOut</button>
             
           </div> 
     
@@ -102,6 +117,7 @@ function Dashboard(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
+    
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar
@@ -122,7 +138,8 @@ function Dashboard(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-           DashBoard
+
+           DashBoard || {user.displayName}
           </Typography>
         </Toolbar>
       </AppBar>

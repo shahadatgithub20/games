@@ -5,10 +5,10 @@
 
 }
 .GamesItemsMain{
-    /* background-color: rgb(221, 196, 245); */
+    
     display: flex;
    
-    /* margin: 10%; */
+   
    
    
   
@@ -18,8 +18,12 @@
     height: 100px;
     width: auto;
     padding: 5px;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     border: 5px solid yellow;
     justify-items: center;
     margin: 10px;
+}
+.NavLink{
+    text-decoration: none;
+
 }
