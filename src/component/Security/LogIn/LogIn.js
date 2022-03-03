@@ -3,16 +3,20 @@ import { NavLink } from 'react-router-dom';
 import useAuth from '../../../Firebase/FirebaseHook/useAuth';
 
 const LogIn = () => {
-    const {user, signIngUseIngGoogle,logOut}=useAuth();
+    const {user ,signIngUseIngGoogle,LogIn,logOut,handelEmailField,handelPasswordField,error
+        }=useAuth();
     return (
         <div>
             <h1>Welcome Back !</h1>
                 <h2>{user.displayName}</h2>
-                <form action="">
-                    <input type="email" placeholder='Enter your Email' required />
+                <h2>{user.phoneNumber}</h2>
+                <h2>{user.email}</h2>
+                <span>{error}</span>
+                <form onSubmit={LogIn} >
+                    <input onBlur={handelEmailField} type="email" placeholder='Enter your Email' required />
                     <br/>
                     <br/>
-                    <input type="password" placeholder='Enter your Password' required />
+                    <input onBlur={handelPasswordField} type="password" placeholder='Enter your Password' required />
                     <br/>
                     <h3>Forget Password</h3>
                     <br/>

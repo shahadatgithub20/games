@@ -26,6 +26,9 @@ import TeenPatti from './component/Games/Games-01/TeenPatti';
 import Start from './component/Games/Start/Start';
 import AuthProvider from './Firebase/FirebaseHook/AuthProvider';
 import PrivateRoute from './Firebase/PrivateRoute/PrivateRoute';
+import Users from './component/User/Users';
+import Card from './component/Games/Card-png/Card';
+import Cards from './component/Games/Card-png/Cards';
 // ========================
 
 
@@ -46,6 +49,7 @@ function App() {
                   <Route path="/ComplenList " element={<ComplenList  />} />
                   <Route  path="DashBoardHome" element={<DashBoardHome/>}/> 
                   <Route path="/User" element={<User />} />
+                  <Route path="/Users" element={<Users />} />
                   <Route path="/LogIn" element={<LogIn />} />
                   <Route path="/Profile" element={<Profile />} />
                   <Route path="/AccountHistory" element={<AccountHistory/>} />
@@ -55,6 +59,8 @@ function App() {
                   <Route path="/WithdrawList" element={<WithdrawList />} />
                   <Route path="/TeenPatti" element={<PrivateRoute> <TeenPatti /></PrivateRoute>} />
                   <Route path="/Start" element={<Start/>} />
+                  <Route path="/Cart" element={<Card/>} />
+                  <Route path="/Carts" element={<Cards/>} />
                   <Route path="/Complen" element={<Complen />} />
                   <Route path="/Footer" element={<Footer />} />
                 </Routes>

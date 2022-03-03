@@ -1,16 +1,29 @@
 import { Button, Input, InputBase, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Users from './Users';
 import "./user.css"
 
+
 const User = () => {
+    const [users,setUsers]=useState([]);
+    console.log(users);
+
+    useEffect(()=>{
+        fetch('http://localhost:5000/users')
+        .then(res=>res.json())
+        .then(data=>setUsers(data))
+    },[])
+
+    
     return (
         <div>
+             <h1>{users.length}</h1>
             <div className="">
+               
                 {/* ========================= */}
                <div > <Input className="search" type="text" placeholder="Search…"/> {"|"} <Button className="search">Search</Button></div>
                 {/* ========================= */}
                 <TableContainer>
-
                         <TableHead>
                             <TableRow>
                                 <TableCell align="right">Name </TableCell>
@@ -21,36 +34,17 @@ const User = () => {
                                 <TableCell align="right">Amount</TableCell>
                                 <TableCell align="right">Status</TableCell>
                                 <TableCell align="right">Approved</TableCell>
+                                <TableCell align="right">Edit</TableCell>
                             </TableRow>
                         </TableHead>
+                            {
+                                users.map(users =><Users
+                                     key={users._Id}
+                                     user={users}
+                                     >
 
-                        <TableBody> 
-                            <TableRow>                           
-                                <TableCell align="right">Shahadat Hossain</TableCell>
-                                <TableCell align="right">QF-012345</TableCell>
-                                <TableCell align="right">shahadatvip9459@gmail.com</TableCell>                     
-                                <TableCell align="right">BABU1234</TableCell>                     
-                                <TableCell align="right">12345</TableCell>                     
-                                <TableCell align="right">10000</TableCell>                     
-                                <TableCell align="right">Active</TableCell>                     
-                                <TableCell align="right"><input type="checkbox"  /></TableCell>  
-                                <TableCell align="right"><Button>Update</Button></TableCell>  
-
-                            </TableRow>
-                            <TableRow>                           
-                                <TableCell align="right">Shahadat Hossain</TableCell>
-                                <TableCell align="right">QF-012345</TableCell>
-                                <TableCell align="right">shahadatvip9459@gmail.com</TableCell>                     
-                                <TableCell align="right">BABU1234</TableCell>                     
-                                <TableCell align="right">12345</TableCell>                     
-                                <TableCell align="right">15000</TableCell>                     
-                                <TableCell align="right">DeActive</TableCell>                     
-                                <TableCell align="right"><input type="checkbox"  /></TableCell>                     
-                                <TableCell align="right"><Button>Update</Button></TableCell>  
-                            </TableRow>
-                        </TableBody>
-
-
+                                     </Users>)
+                            }
                 </TableContainer>
             </div>
         </div>

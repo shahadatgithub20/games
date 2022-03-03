@@ -44,6 +44,8 @@ import Complen from '../UserCortroll/Complen';
 import ComplenList from '../AdminControll/ComplenList';
 import Start from '../Games/Start/Start';
 import useAuth from '../../Firebase/FirebaseHook/useAuth';
+import UserState from '../Games/Games-01/UserState/UserState';
+import Card from '../Games/Card-png/Card';
 // ==================================
 
  
@@ -89,6 +91,10 @@ const {user, signIngUseIngGoogle,logOut}=useAuth();
                   <NavLink to="PaymentList" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">PaymentList</Button></NavLink>
                   <br/>
                   <NavLink to="User" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">User Approve</Button></NavLink>
+                  <br/>
+                  <NavLink to="Card" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">Card</Button></NavLink>
+                  <br/>
+                  <NavLink to="UserState" style={{ textDecoration: 'none',color:"black", textAlign:'left' }}><Button  color="inherit">UserState</Button></NavLink>
                   <br/>
 
                </Box>
@@ -197,7 +203,9 @@ const {user, signIngUseIngGoogle,logOut}=useAuth();
                 <Route path="Register" element={<Register />} />
                 <Route path="TeenPatti" element={<TeenPatti />} />
                 <Route path="Start" element={<Start/>} />
+                <Route path="Card" element={<Card/>} />
                 <Route path="Complen" element={<Complen />} />
+                <Route path="UserState" element={<UserState />} />
                          
            </Routes>
             {/* ======================================================= */}

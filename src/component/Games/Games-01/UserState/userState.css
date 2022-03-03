@@ -1,0 +1,12 @@
+.userState{
+    height: auto;
+    width: auto;
+    padding: 5px;
+    /* background-color: blueviolet; */
+    border: 5px solid yellow;
+    justify-items: center;
+    margin: 10px;
+}
+.NavLink{
+    text-decoration: none;
+}
