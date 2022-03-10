@@ -37,7 +37,7 @@ function App() {
     <div className="App">
       <AuthProvider>
         <BrowserRouter>
-            <Header />
+            {/* <Header /> */}
             
                 <Routes>
                   <Route path="/Header" element={<Header/>} />

@@ -9,23 +9,25 @@ import DashBoardHome from '../DashBoard/DashBoardHome';
 
 const Home = () => {
     return (
-        <div>
-            <Header/>
-            <div >
+        <div >
+            
+            <div className="" >
                 <Grid container spacing={2}>
-                    <Grid className="Home-section-1" item xs={12} md={8}>
-                        <DashBoardHome></DashBoardHome>
-                    
-                    </Grid>
-                    <Grid className="" item xs={12} md={4}>
-                        <div className="Home-section-2">
+                    <Grid  item xs={12} md={12}>
+                        <div className="Home-section-2 main">
+                            <Header/>
                             <LogIn></LogIn>
+                        </div>
+                    </Grid>
+                    <Grid  item xs={12} md={12}>
+                        <div className="">
+                        <Footer></Footer>
                         </div>
                     </Grid>
                 
                 </Grid>
             </div>
-            <Footer></Footer>
+            
         </div>
     );
 };

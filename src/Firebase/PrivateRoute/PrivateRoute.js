@@ -4,7 +4,7 @@ import { Navigate, } from 'react-router-dom';
 
 import useAuth from '../FirebaseHook/useAuth';
 
-const PrivateRoute = ({children,}) => {
+const PrivateRoute = ({children}) => {
   console.log(children);
  
 

@@ -4,12 +4,12 @@
 // =========================================
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAq11uGPTzhy_LIlN49chqknIlFut54DOs",
-  authDomain: "my-games-57fce.firebaseapp.com",
-  projectId: "my-games-57fce",
-  storageBucket: "my-games-57fce.appspot.com",
-  messagingSenderId: "112826510814",
-  appId: "1:112826510814:web:6255ea3b7e8fb61fa9414f"
+  apiKey: "AIzaSyApizai6o6pMQxuiqzYm0CzstduKWeVKQ4",
+  authDomain: "games-3d93f.firebaseapp.com",
+  projectId: "games-3d93f",
+  storageBucket: "games-3d93f.appspot.com",
+  messagingSenderId: "77421224237",
+  appId: "1:77421224237:web:72df8a129b899febe533a4"
   };
 
 export default firebaseConfig;

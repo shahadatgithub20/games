@@ -1,15 +1,12 @@
-.Home-content{
-    margin: 9px;
-    border:2px solid green;
-    border-radius: 15px;
-    background: rgb(248, 225, 225);
-    
+.Home-section-1 {
+  background-color: rgb(246, 252, 252);
 }
-.Home-section-1{
-    background-color: rgb(246, 252, 252);
+.Home-section-2 {
+  background-color: rgb(175, 252, 156);
+  padding: 30px;
 }
-.Home-section-2{
-    background-color: rgb(175, 252, 156);
-    padding: 10px;
-   
+.main {
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }

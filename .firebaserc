@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "super-play-a06f4"
-  }
+    "default": "super-play-a06f4",
+    "“development”": "games-3d93f"
+  },
+  "targets": {}
 }

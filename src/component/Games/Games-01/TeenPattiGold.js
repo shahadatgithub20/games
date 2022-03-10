@@ -4,9 +4,10 @@ import "./teenPattiGold.css"
 
 const TeenPattiGold = () => {
     return (
+        
         <div >
                     <div className="BoardMainContent"> 
-  
+                            <span>start time</span>
                         <div className="button">
                             <div className="BoardContent">
                                 {/* ==================== */}
@@ -24,9 +25,7 @@ const TeenPattiGold = () => {
                                 <div className="">                                  
                                     <h1>Start your Games !!!!!!!!!!</h1>
                                 </div>
-                                <div className="">
-                                    <h1>Times</h1>
-                                </div>
+                                
                                 {/* ==================== */}
                                 <div className="boardDown">
                                     <div className='player' >
@@ -48,7 +47,7 @@ const TeenPattiGold = () => {
                                 <span>Show Card Section !!!!!!!</span>
                             </div>
                             <br/>
-                            <button>Button=1</button> | <button>Button=2</button> | <span>Balance</span> | <button>Button=3</button> | <button> + </button> || <button> - </button>
+                            <button>Button=1</button> | <button>Button=2</button> | <span>Balance</span> | <button>Button=3</button> | <button> - </button> |<span>150</span>| <button> + </button>
                             
                         </div> 
       

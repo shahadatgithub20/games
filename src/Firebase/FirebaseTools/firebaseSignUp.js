@@ -4,6 +4,7 @@ import { getAuth, signInWithPopup,signInWithEmailAndPassword, GoogleAuthProvider
 import { useEffect } from "react";
 // =========================================
 import { useState } from "react";
+
 import firebaseConfig from "./FirebaseConfig";
 
 // ======================firebase  initialize from apps
@@ -69,7 +70,7 @@ const setUserName=()=>{
       });
 }
 const setPhoneNumber=()=>{
-    updateProfile(auth.currentUser,{phoneNumber:number})
+    updateProfile(user.auth.currentUser,{phoneNumber:number})
     .then(result => {
         // Profile updated!
         // ...
@@ -96,7 +97,11 @@ const handelRegisterSubmit=e=>{
         setUserName();
         setPhoneNumber();
        
-        console.log("bbbbbb=user",result);
+        console.log("bbbbbb=user",user);
+        const user1=user.auth.currentUser;
+        const user2=user.metadata;
+        const babu={babu1:user1,babu2:user2};
+
        
         // ==============================
         // send data in Database
@@ -108,7 +113,7 @@ const handelRegisterSubmit=e=>{
             'content-type': 'application/json' 
             },
         
-            body:JSON.stringify(user)
+            body:JSON.stringify(babu)
             
         })
         .then()
@@ -150,6 +155,8 @@ const LogIn=(e)=>{
       // Signed in 
       const user = result.user;
       console.log(user);
+      
+
       // ...
     })
     .catch(error=>{
